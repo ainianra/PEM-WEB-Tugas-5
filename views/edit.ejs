@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Data Pengguna</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script>
+        function showAlert(message) {
+            alert(message);
+        }
+    </script>
+</head>
+<body>
+    <h2>Edit Data Pengguna</h2>
+    <form action="/update/<%= user.id %>" method="post" onsubmit="showAlert('Pengguna berhasil diupdate!')">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" required value="<%= user.nama %>"><br>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" value="<%= user.email %>"><br>
+        <label for="phone">Telepon:</label>
+        <input type="tel" name="phone" id="phone" value="<%= user.phone %>"><br>
+        <button type="submit">Update</button>
+    </form>
+
+</body>
+</html>

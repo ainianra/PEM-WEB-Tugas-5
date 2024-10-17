@@ -1,0 +1,201 @@
+/* Universal Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif; /* Ganti font dengan Inter */
+}
+
+/* Body Styles with Animated Background */
+body {
+    background: linear-gradient(135deg, #001439, #2e3f4d);
+    color: #fefefe;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative; /* Added for background illustration */
+    animation: backgroundAnimation 10s infinite alternate; /* Background animation */
+}
+
+/* Keyframe for Background Animation */
+@keyframes backgroundAnimation {
+    0% {
+        background: linear-gradient(135deg, #001439, #2e3f4d);
+    }
+    50% {
+        background: linear-gradient(135deg, #2e3f4d, #001439);
+    }
+    100% {
+        background: linear-gradient(135deg, #001439, #d6dade);
+    }
+}
+
+/* Background Illustration */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('background-illustration.svg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.05;
+    z-index: -1;
+}
+
+/* Headings */
+h1, h2 {
+    color: #d6dade; /* Light Aqua */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+/* Table Styles */
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    background-color: #2e3f4d; /* Slate Blue */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+table:hover {
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Table Header and Cell Styles */
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #d6dade; /* Light Aqua */
+    color: #fefefe;
+}
+
+th {
+    background-color: #001439; /* Dark Navy */
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+td {
+    background-color: #2e3f4d; /* Slate Blue */
+}
+
+/* Actions (Edit and Delete) */
+td a {
+    color: #d6dade;
+    text-decoration: none;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+
+/* Button Styles */
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #001439; /* Dark Navy */
+    background-color: #eb4a3d; /* Coral Red */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    margin-left: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background-color: #fefefe; /* Off White */
+    color: #001439; /* Dark Navy */
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Form Styling */
+form {
+    background-color: #2e3f4d; /* Slate Blue */
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 40px;
+}
+
+label {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #fefefe; /* Off White */
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    border: 1px solid #d6dade; /* Light Aqua */
+    background-color: #001439; /* Dark Navy */
+    color: #fefefe; /* Off White */
+    border-radius: 5px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #d6dade;
+}
+
+/* Hover animation on rows */
+tr:hover {
+    background-color: #d6dade; /* Light Aqua */
+    transition: background-color 0.3s ease;
+}
+
+/* Adjust form alignment */
+form h2 {
+    text-align: center;
+}
+
+/* Table styling for small screens */
+@media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    th, td {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 5px;
+    }
+
+    td {
+        border-bottom: 1px solid #d6dade; /* Light Aqua */
+    }
+
+    button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
